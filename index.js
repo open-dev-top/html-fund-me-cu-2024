@@ -54,6 +54,7 @@ async function fund() {
     const signer = await provider.getSigner()
     const contract = new ethers.Contract(contractAddress, abi, signer)
     try {
+      // Private key always keep in the Metamask
       const transactionResponse = await contract.fund({
         value: ethers.parseEther(ethAmount),
       })
